@@ -1,20 +1,41 @@
 var isIntel = true;
 
-Array.from(document.getElementsByClassName("data")).forEach(d => {
-    var n = d.getElementsByClassName("name")[0],
-        p = d.getElementsByClassName("price")[0];
-    n.value = localStorage.getItem(n.getAttribute("id"));
-    p.value = localStorage.getItem(p.getAttribute("id"));
-});
+load(), autoGetDate(), calc();
 
-autoGetDate(), calc();
-
-Array.from(document.getElementsByClassName("price")).forEach(p => {
+Array.from(document.getElementsByTagName("input")).forEach(p => {
     p.onchange = function () {
-        if (/\D/.test(p.value)) {
+        if (p.getAttribute("class") == "price" && /\D/.test(p.value)) {
             p.value = "";
             return;
         }
-        calc();
+        calc(), save();
     }
 });
+
+document.getElementById("copy-or-paste").onclick = async function () {
+    var nowClipboard = await navigator.clipboard.readText();
+    if (nowClipboard.includes("pc-sets-list")) {
+        // pc-set-list::i9-13900K$4000|RTX4090$20000......
+        var toPaste = nowClipboard.split("::")[1].split("|");
+        var i = 0;
+        Array.from(document.getElementsByClassName("data")).forEach(d => {
+            var n = d.getElementsByClassName("name")[0],
+                p = d.getElementsByClassName("price")[0];
+            n.value = toPaste[i].split("$")[0];
+            p.value = toPaste[i++].split("$")[1];
+        });
+        if (nowClipboard.split("::")[2] != undefined)
+            document.getElementById("list-title").innerText =
+                nowClipboard.split("::")[2];
+        navigator.clipboard.writeText("");
+    } else {
+        var toCopy = "pc-sets-list::";
+        Array.from(document.getElementsByClassName("data")).forEach(d => {
+            var n = d.getElementsByClassName("name")[0],
+                p = d.getElementsByClassName("price")[0];
+            toCopy += "" + localStorage.getItem(n.getAttribute("id"));
+            toCopy += "$" + localStorage.getItem(p.getAttribute("id")) + "|";
+        });
+        navigator.clipboard.writeText(toCopy.substring(0, toCopy.length - 1));
+    }
+}

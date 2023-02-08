@@ -11,65 +11,66 @@
 </head>
 
 <body>
-    <div class="list-block">
-        <div class="blue" id="title" onclick="switchPlatform()">
-            <h3>装机配置单</h3>
+    <div id="list-block">
+        <div id="list-title" class="intel" onclick="switchPlatform()">
+            装机配置单
         </div>
-        <table>
+        <table id="list-table">
             <tr class="data">
                 <th class="items">CPU</th>
-                <td><input class="name" type="text" id="name-cpu"></td>
-                <td><input class="price" type="text" id="price-cpu"></td>
+                <td><input id="name-cpu" class="name" type="text"></td>
+                <td><input id="price-cpu" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">主板</th>
-                <td><input class="name" type="text" id="name-motherboard"></td>
-                <td><input class="price" type="text" id="price-motherboard"></td>
+                <td><input id="name-motherboard" class="name" type="text"></td>
+                <td><input id="price-motherboard" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">内存</th>
-                <td><input class="name" type="text" id="name-memory"></td>
-                <td><input class="price" type="text" id="price-memory"></td>
+                <td><input id="name-memory" class="name" type="text"></td>
+                <td><input id="price-memory" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">硬盘</th>
-                <td><input class="name" type="text" id="name-disk"></td>
-                <td><input class="price" type="text" id="price-disk"></td>
+                <td><input id="name-disk" class="name" type="text"></td>
+                <td><input id="price-disk" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">显卡</th>
-                <td><input class="name" type="text" id="name-gpu"></td>
-                <td><input class="price" type="text" id="price-gpu"></td>
+                <td><input id="name-gpu" class="name" type="text"></td>
+                <td><input id="price-gpu" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">机箱</th>
-                <td><input class="name" type="text" id="name-chassis"></td>
-                <td><input class="price" type="text" id="price-chassis"></td>
+                <td><input id="name-chassis" class="name" type="text"></td>
+                <td><input id="price-chassis" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">电源</th>
-                <td><input class="name" type="text" id="name-power"></td>
-                <td><input class="price" type="text" id="price-power"></td>
+                <td><input id="name-power" class="name" type="text"></td>
+                <td><input id="price-power" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">散热</th>
-                <td><input class="name" type="text" id="name-cooling"></td>
-                <td><input class="price" type="text" id="price-cooling"></td>
+                <td><input id="name-cooling" class="name" type="text"></td>
+                <td><input id="price-cooling" class="price" type="text"></td>
             </tr>
             <tr class="data">
                 <th class="items">其它</th>
-                <td><input class="name" type="text" id="name-others"></td>
-                <td><input class="price" type="text" id="price-others"></td>
+                <td><input id="name-others" class="name" type="text"></td>
+                <td><input id="price-others" class="price" type="text"></td>
             </tr>
             <tr>
-                <th class="items total" colspan="3">
+                <th class="items summary" colspan="3">
                     <i id="date"></i><i id="total"></i>
                 </th>
             </tr>
         </table>
-        <div class="cr">
-            © Penyo. All rights reserved.
-        </div>
+    </div>
+    <button id="copy-or-paste">📋</button>
+    <div id="copyright">
+        © Penyo. All rights reserved.
     </div>
 </body>
 
