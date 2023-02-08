@@ -72,7 +72,7 @@ table::before {
 table::after {
     content: "价格";
     top: 32.8px;
-    right: -88px;
+    right: -78px;
 }
 
 table,
