@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 思源黑体;
+}
+
+*::selection {
+    background: transparent;
+}
+
+.list-block {
+    position: relative;
+    width: 500px;
+    background: #ffffff99;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 3px #00000033;
+    margin: 40px auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.list-block::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: center no-repeat url(https://i.328888.xyz/2023/02/08/34J8q.jpeg);
+    background-size: cover;
+    filter: blur(4px);
+}
+
+#title {
+    height: 48px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 48px;
+}
+
+.blue {
+    background: #0066ff99;
+}
+
+.red {
+    background: #ff000099;
+}
+
+table {
+    padding: 12px 0;
+}
+
+table::before,
+table::after {
+    position: absolute;
+    width: 1em;
+    color: transparent;
+    line-height: 70px;
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic;
+    -webkit-text-stroke: 0.5px #ffffff;
+}
+
+table::before {
+    content: "配置";
+    bottom: 70px;
+    left: -88px;
+}
+
+table::after {
+    content: "价格";
+    top: 32.8px;
+    right: -88px;
+}
+
+table,
+tr,
+th,
+td {
+    position: relative;
+    margin: auto;
+}
+
+.items {
+    position: absolute;
+    top: -8px;
+    left: 4px;
+    color: #ffffffcc;
+    font-style: italic;
+    font-size: 36px;
+}
+
+input[type="text"] {
+    padding: 14px 0 0;
+    height: 22px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #333333;
+    transition: all 0.5s;
+    color: #000000;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    background: linear-gradient(to bottom, transparent, #0000001a);
+    padding: 8px 0 6px;
+}
+
+.name {
+    margin: 0 5px;
+    width: 256px;
+}
+
+.price {
+    margin: 0 5px;
+    width: 72px;
+}
+
+.total {
+    position: static;
+    padding: 14px 0 4px;
+    color: #333333;
+    font-size: 13.3333px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.cr {
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    color: #333333;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .list-block {
+        zoom: 70%;
+    }
+}
