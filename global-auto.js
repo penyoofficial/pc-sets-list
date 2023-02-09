@@ -15,7 +15,7 @@ Array.from(document.getElementsByTagName("input")).forEach(p => {
 document.getElementById("copy-or-paste").onclick = async function () {
     var nowClipboard = await navigator.clipboard.readText();
     if (nowClipboard.includes("pc-sets-list")) {
-        // pc-set-list::i9-13900K$4000|RTX4090$20000......
+        // pc-set-list::i9-13900K$4000|RTX4090$20000......::title
         var toPaste = nowClipboard.split("::")[1].split("|");
         var i = 0;
         Array.from(document.getElementsByClassName("data")).forEach(d => {
@@ -24,6 +24,7 @@ document.getElementById("copy-or-paste").onclick = async function () {
             n.value = toPaste[i].split("$")[0];
             p.value = toPaste[i++].split("$")[1];
         });
+        calc(), save();
         if (nowClipboard.split("::")[2] != undefined)
             document.getElementById("list-title").innerText =
                 nowClipboard.split("::")[2];
